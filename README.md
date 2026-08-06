@@ -2,7 +2,7 @@
 
 A browsable file tree for the side panel of a bb thread.
 
-The right panel of [bb](https://github.com/ymichael/bb) has an Info tab, a Diff
+The right panel of [bb](https://github.com/get-bb/bb) has an Info tab, a Diff
 tab, file tabs, and a fuzzy file search. It has no tree. You can open a file
 when you know its name. You cannot look through the directory. This plugin adds
 the tree, with a preview pane next to it.
@@ -59,7 +59,17 @@ Three results follow from this design:
 
 ## Install
 
-The repository does not include `dist/`. You must build it one time.
+CAUTION: Read the source code before you install this plugin. A bb plugin runs
+with full trust inside the bb server and can read all local bb data.
+
+The branch `release` holds the built plugin. Install it with one command:
+
+```sh
+bb plugin install git:https://github.com/rekon307/bb-plugin-filetree.git@release --yes
+```
+
+To install from source, clone the repository and build it. The branch `main`
+does not include `dist/`.
 
 ```sh
 git clone https://github.com/rekon307/bb-plugin-filetree.git
@@ -67,9 +77,6 @@ cd bb-plugin-filetree
 npm install
 bb plugin install .
 ```
-
-CAUTION: Read the source code before you install this plugin. A bb plugin runs
-with full trust inside the bb server and can read all local bb data.
 
 ## Development
 
