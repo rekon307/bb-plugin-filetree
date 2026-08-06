@@ -181,7 +181,7 @@ var {
   createDropdownMenuScope
 } = mod4;
 
-// node_modules/clsx/dist/clsx.mjs
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/node_modules/clsx/dist/clsx.mjs
 function r(e) {
   var t, f, n = "";
   if ("string" == typeof e || "number" == typeof e) n += e;
@@ -196,7 +196,7 @@ function clsx() {
   return n;
 }
 
-// node_modules/tailwind-merge/dist/bundle-mjs.mjs
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/node_modules/tailwind-merge/dist/bundle-mjs.mjs
 var concatArrays = (array1, array2) => {
   const combinedArray = new Array(array1.length + array2.length);
   for (let i = 0; i < array1.length; i++) {
@@ -3450,12 +3450,12 @@ var getDefaultConfig = () => {
 };
 var twMerge = /* @__PURE__ */ createTailwindMerge(getDefaultConfig);
 
-// lib/utils.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/lib/utils.ts
 function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-// lib/portal-scope.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/lib/portal-scope.ts
 function usePortalScopeProps() {
   const pluginId = true ? "filetree" : void 0;
   return {
@@ -3465,7 +3465,7 @@ function usePortalScopeProps() {
   };
 }
 
-// components/ui/coarse-pointer-sizing.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/coarse-pointer-sizing.ts
 var COARSE_POINTER_TEXT_BASE_CLASS = "text-sm max-md:pointer-coarse:text-base";
 var COARSE_POINTER_CHECK_SLOT_CLASS = "h-3.5 w-3.5 max-md:pointer-coarse:h-5 max-md:pointer-coarse:w-5";
 var HEADER_ICON_BUTTON_BOX_CLASS = "h-[28px] w-[28px] rounded-md p-0 max-md:pointer-coarse:h-[36px] max-md:pointer-coarse:w-[36px]";
@@ -3473,7 +3473,7 @@ var COARSE_POINTER_HEADER_ICON_BUTTON_CLASS = `${HEADER_ICON_BUTTON_BOX_CLASS} [
 var COARSE_POINTER_HEADER_REDUCED_GLYPH_ICON_BUTTON_CLASS = `${HEADER_ICON_BUTTON_BOX_CLASS} [&_svg]:size-[13px] max-md:pointer-coarse:[&_svg]:size-[16px]`;
 var COARSE_POINTER_INPUT_HEIGHT_CLASS = "h-9 max-md:pointer-coarse:h-10";
 
-// node_modules/@radix-ui/react-compose-refs/dist/index.mjs
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/node_modules/@radix-ui/react-compose-refs/dist/index.mjs
 var __defProp2 = Object.defineProperty;
 var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
 function setRef(ref, value) {
@@ -3514,7 +3514,7 @@ function useComposedRefs(...refs) {
 }
 __name(useComposedRefs, "useComposedRefs");
 
-// node_modules/@radix-ui/react-slot/dist/index.mjs
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/node_modules/@radix-ui/react-slot/dist/index.mjs
 var __defProp3 = Object.defineProperty;
 var __name2 = (target, value) => __defProp3(target, "name", { value, configurable: true });
 // @__NO_SIDE_EFFECTS__
@@ -3666,7 +3666,7 @@ var {
   Root: Root2
 } = mod5;
 
-// components/ui/overlay-trigger.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/overlay-trigger.ts
 var OVERLAY_TRIGGER_CLASS_NAME = "select-none";
 var NON_TEXT_INPUT_TYPES = /* @__PURE__ */ new Set([
   "button",
@@ -3737,7 +3737,7 @@ var {
   jsxs
 } = mod6;
 
-// components/ui/drawer.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/drawer.tsx
 var Drawer2 = ({
   shouldScaleBackground = false,
   ...props
@@ -3821,7 +3821,7 @@ var DrawerDescription = forwardRef(({ className, ...props }, ref) => /* @__PURE_
 ));
 DrawerDescription.displayName = Drawer.Description.displayName;
 
-// components/ui/hooks/use-media-query.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/hooks/use-media-query.ts
 var mediaQueryCache = /* @__PURE__ */ new Map();
 function createMediaQueryRef(query) {
   if (typeof window === "undefined") return null;
@@ -3868,7 +3868,7 @@ function useMediaQuery(query) {
   );
 }
 
-// components/ui/hooks/use-compact-viewport.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/hooks/use-compact-viewport.tsx
 var COMPACT_VIEWPORT_QUERY = "(max-width: 767px)";
 var CompactViewportOverrideContext = createContext(null);
 function useIsCompactViewport() {
@@ -3880,13 +3880,13 @@ function useIsCompactViewport() {
   return isCompactViewport;
 }
 
-// components/ui/hooks/use-pointer-coarse.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/hooks/use-pointer-coarse.ts
 var POINTER_COARSE_QUERY = "(pointer: coarse)";
 function usePointerCoarse() {
   return useMediaQuery(POINTER_COARSE_QUERY);
 }
 
-// components/ui/responsive-overlay.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/responsive-overlay.tsx
 var ResponsiveDrawerDepthContext = createContext(0);
 var SONNER_TOASTER_SELECTOR = "[data-sonner-toaster]";
 function resetDrawerKeyboardStyles(drawerElement) {
@@ -4091,7 +4091,7 @@ function ResponsiveDrawerShell({
   );
 }
 
-// components/ui/menu-item-hover.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/menu-item-hover.tsx
 var MENU_NAV_KEYS = /* @__PURE__ */ new Set([
   "ArrowDown",
   "ArrowUp",
@@ -4152,11 +4152,11 @@ function useMenuItemHover(handlers) {
   };
 }
 
-// components/ui/motion.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/motion.ts
 var CONTROL_HOVER_TRANSITION = "transition-colors duration-150 hover:duration-0";
 var LIST_HOVER_TRANSITION = "transition-none";
 
-// node_modules/@hugeicons/react/dist/esm/HugeiconsIcon.js
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/node_modules/@hugeicons/react/dist/esm/HugeiconsIcon.js
 var defaultAttributes = {
   xmlns: "http://www.w3.org/2000/svg",
   width: 24,
@@ -4207,7 +4207,7 @@ var HugeiconsIcon = forwardRef(({ color = "currentColor", size = 24, strokeWidth
 });
 HugeiconsIcon.displayName = "HugeiconsIcon";
 
-// node_modules/@hugeicons/core-free-icons/dist/esm/index.js
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/node_modules/@hugeicons/core-free-icons/dist/esm/index.js
 var AiContentGenerator01Icon = [
   ["path", { d: "M11 21H10C6.22876 21 4.34315 21 3.17157 19.8284C2 18.6569 2 16.7712 2 13V10C2 6.22876 2 4.34315 3.17157 3.17157C4.34315 2 6.22876 2 10 2H12C15.7712 2 17.6569 2 18.8284 3.17157C20 4.34315 20 6.22876 20 10V10.5", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "1.5", key: "0" }],
   ["path", { d: "M17.4069 14.4036C17.6192 13.8655 18.3808 13.8655 18.5931 14.4036L18.6298 14.4969C19.1482 15.8113 20.1887 16.8518 21.5031 17.3702L21.5964 17.4069C22.1345 17.6192 22.1345 18.3808 21.5964 18.5931L21.5031 18.6298C20.1887 19.1482 19.1482 20.1887 18.6298 21.5031L18.5931 21.5964C18.3808 22.1345 17.6192 22.1345 17.4069 21.5964L17.3702 21.5031C16.8518 20.1887 15.8113 19.1482 14.4969 18.6298L14.4036 18.5931C13.8655 18.3808 13.8655 17.6192 14.4036 17.4069L14.4969 17.3702C15.8113 16.8518 16.8518 15.8113 17.3702 14.4969L17.4069 14.4036Z", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "1.5", key: "1" }],
@@ -4839,7 +4839,7 @@ var ZoomOutAreaIcon = [
   ["path", { d: "M10 3H14M3 10V14M6.5 21C4.567 21 3 19.433 3 17.5M17.5 3C19.433 3 21 4.567 21 6.5M3 6.5C3 4.567 4.567 3 6.5 3", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "1.5", key: "2" }]
 ];
 
-// components/ui/icon.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/icon.tsx
 var PaletteStrokeRoundedIcon = [
   [
     "path",
@@ -5124,7 +5124,7 @@ function Icon({
   );
 }
 
-// components/ui/dropdown-menu.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/dropdown-menu.tsx
 var MENU_ITEM_NEUTRAL_STATE_CLASS = "focus:bg-state-hover focus:text-foreground data-[last-hovered]:bg-state-hover data-[last-hovered]:text-foreground";
 var MENU_ITEM_DESTRUCTIVE_STATE_CLASS = "text-destructive focus:bg-destructive/15 focus:text-destructive data-[last-hovered]:bg-destructive/15";
 var MENU_ITEM_DESTRUCTIVE_TOUCH_CLASS = "text-destructive focus:bg-destructive/15 focus:text-destructive active:bg-destructive/20 active:text-destructive";
@@ -5579,7 +5579,7 @@ var DropdownMenuShortcut = ({
 };
 DropdownMenuShortcut.displayName = "DropdownMenuShortcut";
 
-// components/ui/input.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/input.tsx
 var Input = forwardRef(
   ({ className, type, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
@@ -5601,7 +5601,7 @@ var Input = forwardRef(
 );
 Input.displayName = "Input";
 
-// node_modules/class-variance-authority/dist/index.mjs
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/node_modules/class-variance-authority/dist/index.mjs
 var falsyToString = (value) => typeof value === "boolean" ? `${value}` : value === 0 ? "0" : value;
 var cx = clsx;
 var cva = (base, config) => (props) => {
@@ -5643,7 +5643,7 @@ var cva = (base, config) => (props) => {
   return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
 };
 
-// components/ui/button.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/button.tsx
 var buttonVariants = cva(
   `inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ${CONTROL_HOVER_TRANSITION} focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`,
   {
@@ -5684,7 +5684,7 @@ var Button = forwardRef(
 );
 Button.displayName = "Button";
 
-// components/PanelToolbar.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/PanelToolbar.tsx
 function PanelToolbar({
   isTreeVisible,
   onToggleTreeVisible,
@@ -5763,7 +5763,7 @@ function PanelToolbar({
   ] });
 }
 
-// hooks/useDelayedTrue.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/hooks/useDelayedTrue.ts
 function useDelayedTrue(active, delayMs) {
   const [isElapsed, setIsElapsed] = useState(false);
   useEffect(() => {
@@ -5777,7 +5777,7 @@ function useDelayedTrue(active, delayMs) {
   return active && isElapsed;
 }
 
-// lib/clipboard.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/lib/clipboard.ts
 async function copyToClipboard(text) {
   try {
     await navigator.clipboard.writeText(text);
@@ -5787,7 +5787,7 @@ async function copyToClipboard(text) {
   }
 }
 
-// lib/paths.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/lib/paths.ts
 function baseName(path) {
   return path.slice(path.lastIndexOf("/") + 1) || path;
 }
@@ -5797,14 +5797,14 @@ function extensionOf(path) {
   return dot <= 0 ? "" : name.slice(dot + 1).toLowerCase();
 }
 
-// lib/entry.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/lib/entry.ts
 var MARKDOWN_EXTENSIONS = /* @__PURE__ */ new Set(["md", "mdx", "markdown"]);
 function iconFor(entry, isExpanded) {
   if (entry.kind === "directory") return isExpanded ? "FolderOpen" : "Folder";
   return MARKDOWN_EXTENSIONS.has(extensionOf(entry.path)) ? "FileText" : "File";
 }
 
-// components/Preview.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/Preview.tsx
 function Preview({
   rpc,
   threadId,
@@ -5881,13 +5881,13 @@ function Preview({
   ] });
 }
 
-// lib/layout.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/lib/layout.ts
 var DEFAULT_TREE_WIDTH = 280;
 var MIN_TREE_WIDTH = 180;
 var MAX_TREE_WIDTH = 620;
 var MIN_PREVIEW_WIDTH = 240;
 
-// components/Splitter.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/Splitter.tsx
 function Splitter({
   width,
   containerRef,
@@ -5990,7 +5990,7 @@ var {
   createContextMenuScope
 } = mod7;
 
-// components/ui/context-menu.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/ui/context-menu.tsx
 var CONTEXT_MENU_LAYER_CLASS = "z-[70]";
 var ContextMenu2 = Root3;
 var ContextMenuTrigger2 = Trigger2;
@@ -6201,7 +6201,7 @@ function ContextMenuShortcut({
 }
 ContextMenuShortcut.displayName = "ContextMenuShortcut";
 
-// components/EntryRow.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/EntryRow.tsx
 function EntryRow({
   entry,
   depth,
@@ -6266,7 +6266,7 @@ function EntryRow({
   ] });
 }
 
-// components/TreeRow.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/TreeRow.tsx
 function TreeRow({
   entry,
   depth,
@@ -6313,7 +6313,7 @@ function TreeRow({
   ] });
 }
 
-// components/TreePane.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/TreePane.tsx
 function TreePane({
   treeScrollRef,
   onTreeScroll,
@@ -6368,7 +6368,7 @@ function TreePane({
   );
 }
 
-// hooks/useDirectory.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/hooks/useDirectory.ts
 function useDirectory(rpc, threadId, includeHidden) {
   const [children, setChildren] = useState({});
   const childrenRef = useRef(children);
@@ -6415,11 +6415,11 @@ function reloadTree(directory, rootPath, expandedPaths, force = false) {
   for (const path of expandedPaths) void directory.load(path, force);
 }
 
-// lib/validators.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/lib/validators.ts
 var isNumber2 = (value) => typeof value === "number" && Number.isFinite(value);
 var isBoolean = (value) => typeof value === "boolean";
 
-// lib/thread-tree-state.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/lib/thread-tree-state.ts
 var THREAD_STATE_PREFIX = "bb-plugin-filetree:thread:";
 var MAX_REMEMBERED_THREADS = 25;
 function readThreadState(threadId) {
@@ -6462,7 +6462,7 @@ function writeThreadState(threadId, state) {
   }
 }
 
-// hooks/useEnvironmentRoot.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/hooks/useEnvironmentRoot.ts
 function useEnvironmentRoot(rpc, threadId, directory) {
   const [root, setRoot] = useState(null);
   useEffect(() => {
@@ -6480,7 +6480,7 @@ function useEnvironmentRoot(rpc, threadId, directory) {
   return root;
 }
 
-// hooks/useFileSearch.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/hooks/useFileSearch.ts
 function useFileSearch(rpc, threadId, showHidden) {
   const [query, setQuery] = useState("");
   const [matches, setMatches] = useState(null);
@@ -6519,7 +6519,7 @@ function useFileSearch(rpc, threadId, showHidden) {
   return { query, setQuery, matches };
 }
 
-// hooks/useHiddenFilesReload.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/hooks/useHiddenFilesReload.ts
 function useHiddenFilesReload(directory, rootPath, expanded, showHidden) {
   const previousShowHidden = useRef(showHidden);
   useEffect(() => {
@@ -6531,7 +6531,7 @@ function useHiddenFilesReload(directory, rootPath, expanded, showHidden) {
   }, [directory, expanded, rootPath, showHidden]);
 }
 
-// hooks/usePersistedState.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/hooks/usePersistedState.ts
 function usePersistedState(key, fallback, isValid) {
   const storageKey = `bb-plugin-filetree:${key}`;
   const [value, setValue] = useState(() => {
@@ -6557,7 +6557,7 @@ function usePersistedState(key, fallback, isValid) {
   return [value, store];
 }
 
-// hooks/useThreadTreeState.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/hooks/useThreadTreeState.ts
 function useThreadTreeState(threadId, childrenByPath) {
   const [initial] = useState(() => readThreadState(threadId));
   const [expanded, setExpanded] = useState(() => new Set(initial?.expanded ?? []));
@@ -6624,7 +6624,7 @@ function useThreadTreeState(threadId, childrenByPath) {
   return { expanded, setExpanded, selectedPath, setSelectedPath, treeScrollRef, onTreeScroll };
 }
 
-// hooks/useTreeWidth.ts
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/hooks/useTreeWidth.ts
 function useTreeWidth() {
   const [treeWidth, setTreeWidth] = usePersistedState(
     "tree-width",
@@ -6654,7 +6654,7 @@ function useTreeWidth() {
   return { treeWidth, setTreeWidth, resetTreeWidth, isTreeVisible, setIsTreeVisible, splitRef };
 }
 
-// components/FileTreePanel.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/components/FileTreePanel.tsx
 function FileTreePanel({ threadId }) {
   const rpc = useRpc();
   const composer = useComposer();
@@ -6771,7 +6771,7 @@ function FileTreePanel({ threadId }) {
   ] });
 }
 
-// app.tsx
+// .bb/personal-workspaces/env_w7k29hcs8e/bb-plugin-filetree/app.tsx
 var app_default = definePluginApp((app) => {
   app.slots.threadPanelAction({
     id: "tree",
