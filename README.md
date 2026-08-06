@@ -9,6 +9,8 @@ the tree, with a preview pane next to it.
 
 To open the tree, click **New tab**, then **Actions**, then **Files**.
 
+![Files plugin with a Markdown preview and an expanded file tree](assets/files-panel.png)
+
 ## Functions
 
 - **Lazy tree.** The plugin reads one directory level each time you open a
