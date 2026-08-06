@@ -1,59 +1,65 @@
 # bb-plugin-filetree
 
-A browsable file tree for the [bb](https://github.com/ymichael/bb) thread side
-panel.
+A browsable file tree for the side panel of a bb thread.
 
-bb's right panel ships an Info tab, a Diff tab, open file tabs, and a fuzzy
-"Search files" quick-open — but no tree. You can jump to a file whose name you
-already know; you cannot look around. This plugin adds the tree, with a preview
-pane next to it.
+The right panel of [bb](https://github.com/ymichael/bb) has an Info tab, a Diff
+tab, file tabs, and a fuzzy file search. It has no tree. You can open a file
+when you know its name. You cannot look through the directory. This plugin adds
+the tree, with a preview pane next to it.
 
-Open it from a thread's right panel: **New tab → Actions → Files**.
+To open the tree, click **New tab**, then **Actions**, then **Files**.
 
-## What it does
+## Functions
 
-- **Lazy tree** of the thread environment's directory, read one level per
-  expand, so a large repo costs nothing until you open a folder.
-- **Preview pane** — Markdown through bb's own renderer, other text as
-  monospace (capped at 512 KB), images through a confined, expiring preview
-  URL. Binary files say so instead of dumping bytes.
-- **Filter box** that searches the whole tree.
-- **Resizable divider** (double-click resets, arrow keys nudge it when focused)
-  and a button that hides the tree for a document-only view.
-- **Context menu** on each row: open in preview, expand/collapse, add the path
-  to the chat composer, copy the relative or absolute path.
-- **Per-thread memory** — expanded folders, selection, and scroll position come
-  back when you return to a thread. The last 25 threads are remembered.
-- **Optional hidden files**, in the `…` menu. See the caveat below.
+- **Lazy tree.** The plugin reads one directory level each time you open a
+  folder. A large repository costs nothing until you open it.
+- **Preview pane.** The pane shows Markdown with the renderer of bb, and other
+  text as monospace to a limit of 512 KB. It shows an image through a temporary
+  URL that is confined to the environment directory. For a binary file, the
+  pane shows a message.
+- **Filter box.** The box searches the full tree.
+- **Divider.** Drag the divider to change the width of the tree. Double-click
+  the divider to reset the width. When the divider has focus, the arrow keys
+  move it.
+- **Hide button.** Click the button in the toolbar to hide the tree and show
+  only the document.
+- **Context menu.** Right-click a row to open a file, to expand a folder, to
+  add the path to the chat, or to copy the relative or absolute path.
+- **Memory for each thread.** The plugin stores the open folders, the selected
+  file, and the scroll position. It keeps the last 25 threads.
+- **Hidden files.** The `…` menu has an option to show hidden files. Read the
+  next section for its limit.
 
-Multi-host safe: every read goes through `bb.sdk.files` / `bb.sdk.hosts` with
-the environment's `hostId`, never `node:fs` — with one deliberate exception.
+The plugin reads files with `bb.sdk.files` and `bb.sdk.hosts`, and always sends
+the `hostId` of the environment. The plugin is therefore correct when the
+environment is on a different machine. There is one exception.
 
-## The hidden-files caveat
+## The limit on hidden files
 
-bb's daemon filters dotfiles out of both listing primitives
-(`hosts.directory` and the recursive `files.list`) with no option to keep them,
-so there is no host-routed way to ask for them.
+The daemon of bb removes all dotfiles from both list operations,
+`hosts.directory` and `files.list`. It has no option to keep them. The host
+cannot supply hidden files.
 
-When you enable **Show hidden files**, the plugin reads the directory on the
-machine running the bb server with `node:fs`, and merges the dotted entries in
-**only after** the server's visible entries provably match the entries the host
-reported for that same directory. If the environment lives on a remote machine
-the two sets disagree, nothing is merged, and the menu says the option is
-unavailable — rather than showing you a different machine's files.
+If you enable **Show hidden files**, the plugin reads the directory with
+`node:fs` on the machine that runs the bb server. The plugin then compares its
+own list of visible entries with the list from the host. If the two lists are
+equal, the plugin adds the hidden entries. If the two lists are different, the
+environment is on a different machine. The plugin then adds no entries, and the
+menu shows that the option is not available.
 
-Consequences worth knowing:
+Three results follow from this design:
 
-- Hidden files work for environments on the bb server's own machine.
-- `node_modules` stays hidden either way; that is bb's behavior, and it is not
-  what "hidden files" means.
-- The filter box uses its own walker for hidden matches, which does not descend
-  into `.git` or `node_modules`. `.git/config` is reachable in the tree but not
-  through the filter.
+- Hidden files are available only for an environment on the machine that runs
+  the bb server.
+- `node_modules` stays hidden. This is the behavior of bb, and `node_modules`
+  is not a hidden file.
+- The filter box uses its own directory walk for hidden matches. This walk does
+  not go into `.git` or `node_modules`. You can open `.git/config` in the tree,
+  but the filter does not find it.
 
 ## Install
 
-`dist/` is not committed, so build it once after cloning:
+The repository does not include `dist/`. You must build it one time.
 
 ```sh
 git clone https://github.com/rekon307/bb-plugin-filetree.git
@@ -62,33 +68,38 @@ npm install
 bb plugin install .
 ```
 
-Plugins are full-trust code running inside the bb server. Read the source
-before installing this or any other one.
+CAUTION: Read the source code before you install this plugin. A bb plugin runs
+with full trust inside the bb server and can read all local bb data.
 
 ## Development
 
 ```sh
 npm run typecheck   # tsc --noEmit
-npm test            # vitest: path confinement + the hidden-file walker
-bb plugin dev       # watch, rebuild, reload
+npm test            # vitest: path confinement and the hidden-file walk
+bb plugin dev       # watch, build, reload
 ```
 
-`bb plugin dev` reloads the backend and rebuilds the frontend on save, but an
-already-open **Files** tab keeps the previous bundle — close and reopen it.
+`bb plugin dev` reloads the backend and builds the frontend again after each
+save. An open **Files** tab keeps the old bundle. Close the tab and open it
+again.
 
-Layout: `app.tsx` is only the `definePluginApp` registration. Code lives in
-`lib/`, `hooks/`, and `components/`. `components/ui/` is vendored shadcn source
-from bb's component registry — edit it freely, it never updates underneath you.
-`lib/paths.ts` is shared by the backend and the frontend bundle; its
-`confine()` is a security boundary (paths arrive from the frontend and
-round-trip through persisted panel state) and is covered by tests.
+`app.tsx` contains only the `definePluginApp` registration. The code is in
+`lib/`, `hooks/`, and `components/`. The directory `components/ui/` holds
+vendored shadcn source from the component registry of bb. You can edit these
+files, and they never change without your action.
 
-`types/bb-plugin-sdk*.d.ts` are the bb plugin API declarations emitted by
-`bb plugin new`. They are vendored so `tsc` works without a bb checkout.
+`lib/paths.ts` is common to the backend and the frontend. Its function
+`confine()` is a security boundary, because paths come from the frontend and
+pass through stored panel state. Tests cover this function.
+
+The files `types/bb-plugin-sdk*.d.ts` are the API declarations that
+`bb plugin new` writes. They are in the repository so that `tsc` operates
+without a checkout of bb.
 
 ## Compatibility
 
-bb `>= 0.35`, plugin SDK `^0.4.1`. Built and tested against bb 0.35.1 on macOS.
+This plugin needs bb `>= 0.35` and plugin SDK `^0.4.1`. It was built and tested
+with bb 0.35.1 on macOS.
 
 ## License
 
